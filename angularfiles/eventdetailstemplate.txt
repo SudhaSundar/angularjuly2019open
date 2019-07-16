@@ -1,0 +1,28 @@
+<div class="container">
+  <img [src]="" [alt]="" 
+  class="event-image">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2> </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div><strong>Date:</strong> </div>
+      <div><strong>Time:</strong> </div>
+      <div><strong>Price:</strong> </div>
+    </div>
+    <div class="col-md-6" *ngIf="event?.location">
+      <address>
+        <strong>Address:</strong><br />
+       <br />
+        
+      </address>
+    </div>
+    <div class="col-md-6" >
+    <strong> Online URL: </strong> &nbsp; <span></span>
+    </div>
+  </div>
+</div>
