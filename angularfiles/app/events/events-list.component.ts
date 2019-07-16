@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { EventsListService } from './events-list.service';
 
 //Metadata for your class
+//@Injectable()
 @Component({
 selector: 'events-list',
 template: `
-<h1>{{label}}</h1>
+<h1>Upcoming Angular Events</h1>
 <hr>
-
-<events-list-thumbnail [eve]="eventdetails" ></events-list-thumbnail>
+<div *ngFor="let evedetail of eventdetails">
+<events-list-thumbnail [eve]="evedetail" ></events-list-thumbnail>
+</div>
 `,
 styles: ['h1{color:yellow}']
 
@@ -16,23 +19,17 @@ styles: ['h1{color:yellow}']
 // <events-list-thumbnail  (outdata)="call($event)" #thumbnail [eve]="eventdetails" (click)="call(thumbnail.country)"  ></events-list-thumbnail>
 export class EventsListComponent{
 
-    label:string="Angular Events";
+    //label:string="Angular Events";
 
     // call(data){
     //     this.label=data;
     // }
-
-    eventdetails = {
-        id: 1,
-        name: 'Angular Connect',
-        date: '9/26/2036',
-        time: '10:00 am',
-        price: 599.99,
-        imageUrl: '/assets/images/angularconnect-shield.png',
-        location: {
-          address: '1057 DT',
-          city: 'London',
-          country: 'England'
-        }
-      }
+    
+    eventdetails;
+    constructor(private eventsListService:EventsListService){
+        this.eventsListService; //= new EventsListService();
+        this.eventdetails = this.eventsListService.getAllEvents();
+    }
+    
+  
 }
