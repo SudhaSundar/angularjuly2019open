@@ -8,8 +8,10 @@ selector: 'events-list',
 template: `
 <h1>Upcoming Angular Events</h1>
 <hr>
-<div *ngFor="let evedetail of eventdetails">
+<div  class="row">
+<div *ngFor="let evedetail of eventdetails" class="col-md-5">
 <events-list-thumbnail [eve]="evedetail" ></events-list-thumbnail>
+</div>
 </div>
 `,
 styles: ['h1{color:yellow}']

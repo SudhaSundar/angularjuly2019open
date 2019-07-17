@@ -1,0 +1,27 @@
+<div class="container">
+    <img [src]="eventDetail?.imageUrl" [alt]="eventDetail?.name" 
+    class="event-image">
+  
+    <div class="row">
+      <div class="col-md-11">
+        <h2> </h2>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div><strong>Date: {{eventDetail.date}}</strong> </div>
+        <div><strong>Time:{{eventDetail.time}}</strong> </div>
+        <div><strong>Price:{{eventDetail.price}}</strong> </div>
+      </div>
+      <div class="col-md-6" *ngIf="eventDetail?.location">
+        <address>
+          <strong>Address:{{eventDetail?.location?.address}}</strong><br />
+          {{eventDetail?.location?.city}},{{eventDetail?.location?.country}}        
+        </address>
+      </div>
+      <div class="col-md-6" *ngIf="eventDetail?.onlineUrl">
+      <strong> Online URL:  </strong> &nbsp; <span>{{eventDetail?.onlineUrl}}</span>
+      </div>
+    </div>
+  </div>

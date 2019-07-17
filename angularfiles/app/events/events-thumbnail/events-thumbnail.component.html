@@ -1,4 +1,5 @@
-<div class="well hoverwell thumbnail">
+<!-- http://localhost:4200/events/5 -->
+<div  [routerLink]="['/events',event1?.id]"  class="well hoverwell thumbnail">
   <div>Name: {{event1?.name}}</div>
   <div>Date: {{event1?.date}}</div>
   <div [ngClass]="getEarlyStartStyle()" [ngSwitch]="event1?.time">
