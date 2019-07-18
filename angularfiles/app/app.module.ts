@@ -11,6 +11,9 @@ import {RouterModule} from '@angular/router';
 import { appRoute } from './routes';
 import { Error404Component } from './404.component';
 import { ErrorRouteService } from './events/events-details/error-route.service';
+import { UserComponent } from './user/user.component';
+import {FormsModule}  from '@angular/forms';
+import {AuthService} from './user/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,7 @@ import { ErrorRouteService } from './events/events-details/error-route.service';
     NavBarComponent,
     EventDetailsComponent,
     Error404Component,
+    UserComponent
     
   ],
   imports: [
@@ -26,9 +30,10 @@ import { ErrorRouteService } from './events/events-details/error-route.service';
     //RouterModule.forRoot(routes: Route[]
     RouterModule.forRoot(
       appRoute
-    )
+    ),
+    FormsModule
   ],
-  providers: [EventsListService,ErrorRouteService],
+  providers: [EventsListService,ErrorRouteService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AuthService} from '../user/auth.service'
 @Component({
   selector: 'events-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  authService:AuthService;
+  constructor( authService:AuthService ) {
+    this.authService = authService;
+   }
 
   ngOnInit() {
   }
