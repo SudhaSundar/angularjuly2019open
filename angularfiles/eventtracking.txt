@@ -1,0 +1,17 @@
+<!-- <div class="col-md-1">
+loginForm.valid: <h4>{{loginForm.valid}} </h4><br>
+loginForm.invalid:<h4> {{loginForm.invalid}} </h4><br>
+loginForm.dirty: <h4>{{loginForm.dirty}} </h4><br>
+loginForm.pristine: <h4> {{loginForm.pristine}} </h4> <br>
+loginForm.submitted: <h4>{{loginForm.submitted}} </h4> <br>
+loginForm.touched: <h4>{{loginForm.touched}} </h4> <br>
+loginForm.untouched:<h4> {{loginForm.untouched}} </h4> <br>
+</div> -->
+<div class="col-md-1">
+  loginForm.controls.userName.valid: <h4>{{loginForm.controls.userName1.valid}} </h4><br>
+  loginForm.controls.userName.userName.invalid:<h4> {{loginForm.controls.userName1.invalid}} </h4><br>
+  loginForm.controls.userName.dirty: <h4>{{loginForm.controls.userName1.dirty}} </h4><br>
+  loginForm.controls.userName.pristine: <h4> {{loginForm.controls.userName1.pristine}} </h4> <br>
+  loginForm.controls.userName.touched: <h4>{{loginForm.controls.userName1.touched}} </h4> <br>
+  loginForm.controls.userName.untouched:<h4> {{loginForm.controls.userName1.untouched}} </h4> <br>
+  </div>
