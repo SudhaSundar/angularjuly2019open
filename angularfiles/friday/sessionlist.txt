@@ -1,0 +1,54 @@
+<hr>
+
+    <div class="row">
+      <div class="col-md-2">
+        <h3 style="margin:0">Sessions</h3>
+      </div>
+  
+    </div>
+  
+    <session-list  [sessions]="event?.sessions"></session-list>
+
+
+-----------------------------------------------------------------------------------------------------------------
+Session List Component
+
+<div class="row" *ngFor="let session of sessions">
+  <div class="col-md-10">
+    <div class="well">
+        <h4>{{session.name}}</h4>
+        <h6>{{session.presenter}}</h6>
+        <span>Duration: {{session.duration}}</span><br />
+        <span>Level: {{session.level}}</span>
+        <p>{{session.abstract}}</p>
+    </div>
+  </div>
+</div>
+
+-------------------------------------------------------------------------------------------------------------------------
+
+export interface IEvent {
+  id: number
+  name: string
+  date: Date
+  time: string
+  price: number
+  imageUrl: string
+  location?: {
+    address: string
+    city: string
+    country: string
+  },
+  onlineUrl?: string,
+  sessions: ISession[]
+}
+
+export interface ISession {
+  id: number
+  name: string
+  presenter: string
+  duration: number
+  level: string
+  abstract: string
+  voters: string[]
+}
