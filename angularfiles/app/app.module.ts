@@ -14,6 +14,9 @@ import { ErrorRouteService } from './events/events-details/error-route.service';
 import { UserComponent } from './user/user.component';
 import {FormsModule}  from '@angular/forms';
 import {AuthService} from './user/auth.service';
+import { CreateEventComponent } from './events/create-event.component';
+import {SessionListComponent} from './events/events-details/sessions-list.component'
+import {DurationPipe} from './events/events-details/duration.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import {AuthService} from './user/auth.service';
     NavBarComponent,
     EventDetailsComponent,
     Error404Component,
-    UserComponent
+    UserComponent,
+    CreateEventComponent,
+    SessionListComponent,
+    DurationPipe
     
   ],
   imports: [

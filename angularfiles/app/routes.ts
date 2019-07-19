@@ -4,10 +4,13 @@ import { EventDetailsComponent } from './events/events-details/event-details.com
 import { Error404Component } from './404.component';
 import { ErrorRouteService } from './events/events-details/error-route.service';
 import { UserComponent } from './user/user.component';
+import { CreateEventComponent } from './events/create-event.component';
 //http://localhost:4200/events
 export const appRoute:Route[]=[
 {path:'404',component:Error404Component},
+{path:'events/new',component:CreateEventComponent},
 {path:'events',component:EventsListComponent},
 {path:'user/login',component:UserComponent},
 {path:'events/:id',canActivate:[ErrorRouteService],component:EventDetailsComponent}
+
 ]

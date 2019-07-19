@@ -16,6 +16,12 @@ export class EventsListService{
     getEventByID(id:number){
      return  EVENTS.find((e)=>e.id===id);
     }
+
+    saveForm(formValue){
+      formValue.id = 6,
+      formValue.sessions=[];      
+      EVENTS.push(formValue);
+    }
 }
 const EVENTS =  [
     {
