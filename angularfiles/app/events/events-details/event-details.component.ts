@@ -17,7 +17,9 @@ export class EventDetailsComponent implements OnInit,OnDestroy{
         console.log(typeof(this.route.snapshot.params['id'])); 
         console.log(typeof(+this.route.snapshot.params['id']));         
         let id = +this.route.snapshot.params['id'];
-        this.eventDetail = this.eventsService.getEventByID(id);
+          this.eventsService.getEventByID(id).subscribe(
+            (resp) => this.eventDetail = resp
+            );
     }
 ngOnDestroy(){
 

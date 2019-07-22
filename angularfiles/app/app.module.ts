@@ -17,6 +17,7 @@ import {AuthService} from './user/auth.service';
 import { CreateEventComponent } from './events/create-event.component';
 import {SessionListComponent} from './events/events-details/sessions-list.component'
 import {DurationPipe} from './events/events-details/duration.pipe'
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import {DurationPipe} from './events/events-details/duration.pipe'
     RouterModule.forRoot(
       appRoute
     ),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [EventsListService,ErrorRouteService,AuthService],
   bootstrap: [AppComponent]

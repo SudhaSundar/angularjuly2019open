@@ -30,7 +30,10 @@ export class EventsListComponent{
     eventdetails;
     constructor(private eventsListService:EventsListService){
         this.eventsListService; //= new EventsListService();
-        this.eventdetails = this.eventsListService.getAllEvents();
+          this.eventsListService.getAllEvents()
+        .subscribe((resp)=>{
+            this.eventdetails = resp;
+        });
     }
     
   

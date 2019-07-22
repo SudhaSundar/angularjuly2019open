@@ -18,7 +18,9 @@ export class CreateEventComponent{
 
     }
     saveEvent(data){
-        this.eventService.saveForm(data);
+        this.eventService.saveForm(data).subscribe((resp)=> {
+            console.log(resp);
+        });
         this.route.navigate(['/events']);
     }
 }
